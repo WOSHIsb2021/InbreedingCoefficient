@@ -11,6 +11,11 @@
 此版本是“Wright 路径系数法”最经典、最直接的**高中**教科书式实现。
 
 方法原理：[近交系数的计算](https://mp.weixin.qq.com/s/sBNsRjnCEnb5AlSdyKfQAA)
+![image](https://github.com/user-attachments/assets/639a4ea8-c29c-46f8-8ed7-7eb2d83b7897)
+
+![image](https://github.com/user-attachments/assets/0ca82ded-163e-4ee5-9d08-f3acef9a414d)
+
+该方法使用文章中数据测试得到的结果一致
 
 ### 实现原理
 
@@ -27,7 +32,13 @@
 4. **结果累加**: 将所有通过独立性检查的路径对的贡献值相加，得到最终的近交系数。
 
    方法原理：[Horse Genetics 4.0: Evolution, Breeds, Breeding Strategies and Inbreeding | Laboratoire de génétique vétérinaire](https://labgenvet.ca/en/horse-genetics-4-0-evolution-breeds-breeding-strategies-and-inbreeding/)
+![屏幕截图 2025-06-12 225713](https://github.com/user-attachments/assets/adebc080-8dce-4f59-a188-83776543399c)
 
+
+以下：为网站计算[Inbreeding Calculator | Laboratoire de génétique vétérinaire](https://labgenvet.ca/en/inbreeding-calculator/)结果，可知结果一致
+
+![屏幕截图 2025-06-12 230028](https://github.com/user-attachments/assets/78e552bb-c5f0-4aa9-9847-f935f20dfe0d)
+![屏幕截图 2025-06-12 230133](https://github.com/user-attachments/assets/4f13cef9-3be7-46d3-bdb3-3872ce20bce6)
 ### 侧重
 
 - **理论一致性**: 严格遵循经典遗传学教科书中的计算规则。
@@ -91,15 +102,8 @@
 
 测试结果：
 
-![image-20250612222122503](C:\Users\wine\AppData\Roaming\Typora\typora-user-images\image-20250612222122503.png)
-
-以下：为网站计算[Inbreeding Calculator | Laboratoire de génétique vétérinaire](https://labgenvet.ca/en/inbreeding-calculator/)结果，可知结果一致
-
-![屏幕截图 2025-06-12 195210](F:\Pictures\Screenshots\屏幕截图 2025-06-12 195210.png)
 
 
-
-![屏幕截图 2025-06-12 195259](F:\Pictures\Screenshots\屏幕截图 2025-06-12 195210.png)
 
 母牛谱系数据：
 
