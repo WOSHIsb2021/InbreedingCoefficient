@@ -31,14 +31,6 @@
 
 4. **结果累加**: 将所有通过独立性检查的路径对的贡献值相加，得到最终的近交系数。
 
-   方法原理：[Horse Genetics 4.0: Evolution, Breeds, Breeding Strategies and Inbreeding | Laboratoire de génétique vétérinaire](https://labgenvet.ca/en/horse-genetics-4-0-evolution-breeds-breeding-strategies-and-inbreeding/)
-![屏幕截图 2025-06-12 225713](https://github.com/user-attachments/assets/adebc080-8dce-4f59-a188-83776543399c)
-
-
-以下：为网站计算[Inbreeding Calculator | Laboratoire de génétique vétérinaire](https://labgenvet.ca/en/inbreeding-calculator/)结果，可知结果一致
-
-![屏幕截图 2025-06-12 230028](https://github.com/user-attachments/assets/78e552bb-c5f0-4aa9-9847-f935f20dfe0d)
-![屏幕截图 2025-06-12 230133](https://github.com/user-attachments/assets/4f13cef9-3be7-46d3-bdb3-3872ce20bce6)
 ### 侧重
 
 - **理论一致性**: 严格遵循经典遗传学教科书中的计算规则。
@@ -48,7 +40,14 @@
 
 对应文件 `breedingCalculator2.js`
 此版本在算法上进行了升级，以精确计算复杂谱系，并为极致性能进行了优化。
+ 方法原理：[Horse Genetics 4.0: Evolution, Breeds, Breeding Strategies and Inbreeding | Laboratoire de génétique vétérinaire](https://labgenvet.ca/en/horse-genetics-4-0-evolution-breeds-breeding-strategies-and-inbreeding/)
+![屏幕截图 2025-06-12 225713](https://github.com/user-attachments/assets/adebc080-8dce-4f59-a188-83776543399c)
 
+
+以下：为网站[Inbreeding Calculator | Laboratoire de génétique vétérinaire](https://labgenvet.ca/en/inbreeding-calculator/)计算结果，结果和版本二和版本三的一致
+
+![屏幕截图 2025-06-12 230028](https://github.com/user-attachments/assets/78e552bb-c5f0-4aa9-9847-f935f20dfe0d)
+![屏幕截图 2025-06-12 230133](https://github.com/user-attachments/assets/4f13cef9-3be7-46d3-bdb3-3872ce20bce6)
 ### 实现原理
 
 1.  **共享实例与全局缓存**: 为了最大化性能，整个计算过程共享一个 `BreedingPlanner` 和一个 `RelatednessCalculator` 实例。计算器内部包含三级缓存：个体近交系数 (`inbreedingCache`)、配对后代近交系数 (`offspringInbreedingCache`) 和寻路路径 (`pathCache`)。
