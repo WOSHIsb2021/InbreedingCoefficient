@@ -1,13 +1,13 @@
 // test5.js 新增测试数据并保存结果到CSV文件
 
 // 1. 引入模块
-const { calculateBreedingInbreeding } = require('./breedingCalculator3.js');
-console.log(`breedingCalculator3.js`);
+const { calculateBreedingInbreeding } = require('./breedingCalculator4.js');
+console.log(`breedingCalculator4.js`);
 // 2. 定义谱系数据
 
 // ==================== 母牛数据 ====================
 // 保留原始的单头母牛数据，方便单独测试
-const singleCowData = {
+const singleCowData = [{
     "createBy": null, "createTime": null, "updateBy": null, "updateTime": null, "remark": null,
     "id": 5, "sBirth": null, "fId": "HO840M3139112660", "mId": "HO840F3203692782",
     "ffId": "HO840M3133120549", "fmId": "HO840F3144854006", "mfId": "HOCANM12529277",
@@ -15,7 +15,7 @@ const singleCowData = {
     "fmfId": "HOCANM12264620", "fmmId": "HOUSAF74117572", "mffId": "HO840M3013654627",
     "mfmId": "HO840F3126668018", "mmfId": "HOUSAM72128216", "mmmId": "HO840F3012130293",
     "deptId": null, "deptName": null, "sid": "220057"
-};
+}];
 
 // 新增一个母牛对象数组，用于批量计算
 const cowDataArray = [
@@ -6439,19 +6439,19 @@ function calculateForMultipleCows(cows, bulls) {
 
 
 // 4. 调用新函数并传入母牛数组和公牛数组
-const results = calculateForMultipleCows(cowDataArray, bullDataArray);
+const results = calculateForMultipleCows(singleCowData, bullDataArray);
 
 // 5. 打印结果
-console.log("--- 批量育种配对计算结果 ---");
-if (results && results.length > 0) {
-    results.forEach(result => {
-        console.log(
-            `公牛 (Bull) ID: ${result.bullId.padEnd(16)} | 母牛 (Cow) ID: ${String(result.cowId).padEnd(8)} -> 后代近交系数: ${result.inbreedingCoefficient}`
-        );
-    });
-} else {
-    console.log("没有生成任何配对结果。");
-}
+// console.log("--- 批量育种配对计算结果 ---");
+// if (results && results.length > 0) {
+//     results.forEach(result => {
+//         console.log(
+//             `公牛 (Bull) ID: ${result.bullId.padEnd(16)} | 母牛 (Cow) ID: ${String(result.cowId).padEnd(8)} -> 后代近交系数: ${result.inbreedingCoefficient}`
+//         );
+//     });
+// } else {
+//     console.log("没有生成任何配对结果。");
+// }
 // 6.引入 Node.js 的文件系统模块
 const fs = require('fs');
 const path = require('path');
@@ -6472,7 +6472,7 @@ if (results && results.length > 0) {
     const csvContent = header + rows;
 
     // 定义要保存的文件名
-    const fileName = 'breeding_results.csv';
+    const fileName = 'breeding_results3.csv';
     const filePath = path.join(__dirname, fileName); // 将文件保存在脚本所在目录
 
     // 写入文件
